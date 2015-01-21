@@ -11,7 +11,10 @@ set ylabel "Probability"
 
 set key right top
 
+if(!exists("n2file")) n2file='nudist_n2n.res'
+if(!exists("n3file")) n2file='nudist_n3n.res'
+
 set output isotope.'.png'
 plot \
-"nudist_n2n.res" using 1:5 with histeps ls 1 title "2 neutrons emitted", \
-"nudist_n3n.res" using 1:5 with histeps ls 2 title "3 neutrons emitted"
+n2file using 1:5 with histeps ls 1 title "2 neutrons emitted", \
+n3file using 1:5 with histeps ls 2 title "3 neutrons emitted"
